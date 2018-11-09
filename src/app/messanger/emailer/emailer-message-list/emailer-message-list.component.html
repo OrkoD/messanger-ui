@@ -1,0 +1,26 @@
+<mat-nav-list>
+  <mat-list-item
+    [routerLink]="message._id"
+    *ngFor="let message of messages | filterMsg: msgType; let i = index">
+    <mat-icon matListIcon>message</mat-icon>
+    <h3 matLine> {{ message.receiver }} </h3>
+    <p matLine>
+      <span> {{ message.title }} </span>
+      <span class="demo-2"> -- {{ message.text }} </span>
+    </p>
+    <button class="delete-btn" mat-icon-button>
+      <mat-icon
+        (click)="onDeleteMsg( message._id, $event )"
+        matListIcon>
+        delete_outline
+      </mat-icon>
+    </button>
+    <button class="delete-btn" mat-icon-button>
+      <mat-icon
+        (click)="onStarredMsg( message, $event )"
+        matListIcon>
+        {{ message.starred ? 'star' : 'star_border' }}
+      </mat-icon>
+    </button>
+  </mat-list-item>
+</mat-nav-list>

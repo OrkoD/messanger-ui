@@ -1,0 +1,38 @@
+<div class="emailer-container">
+
+  <mat-toolbar color="primary" class="emailer-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="emailer-title">{{ messangerTitle }}</h1>
+    <button [routerLink]="['/']" class="home-btn" mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container
+    class="emailer-sidenav-container"
+    [style.marginTop.px]="0">
+    <mat-sidenav
+      class="emailer-sidenav"
+      [opened]='true'
+      #snav
+      [mode]="'side'"
+      fixedTopGap="56">
+      <mat-nav-list>
+        <a
+          class="nav-link"
+          mat-list-item [routerLink]="link.url"
+          routerLinkActive="router-link-active" 
+          *ngFor="let link of links">
+          {{ link.name }}
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

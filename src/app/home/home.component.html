@@ -1,0 +1,19 @@
+<div class="home-container">
+  <div class="home-container__header">
+    <h2 class="text-center">Select messanger</h2>
+  </div>
+  <div class="home-container__content">
+    <ul class="home-container__content__account-list">
+      <li
+        *ngFor="let account of accounts"
+        [routerLink]="account.link">
+        <i class="material-icons account-icon">
+          {{ account.img }}
+        </i>
+        <p class="account-name">
+          {{ account.name }}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>

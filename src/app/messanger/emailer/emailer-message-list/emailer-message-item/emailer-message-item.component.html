@@ -1,0 +1,19 @@
+<div class="card text-center" *ngIf="message">
+  <div class="card-header text-left d-flex align-items-center">
+    <button (click)="goBack()" mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button (click)="onDeleteMsg()" mat-icon-button>
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+    <button (click)="onStarred()" mat-icon-button>
+      <mat-icon>{{ getStarShape() }}</mat-icon>
+    </button>
+    <span class="text-muted ml-auto">{{ message.receiver }}</span>
+  </div>
+  <div class="card-body mb-3 mt-3">
+    <h5 class="card-title">{{ message.title }}</h5>
+    <p class="card-text text-left">{{ message.text }}</p>
+  </div>
+  <div class="card-footer text-muted">{{ message.createdAt | timeAgo }}</div>
+</div>
