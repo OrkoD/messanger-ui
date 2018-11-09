@@ -21,6 +21,10 @@ export class MessangerComponent implements OnInit {
       name: 'Social',
       url: 'emailer/social'
     },
+    {
+      name: 'Starred',
+      url: 'emailer/starred'
+    }
   ]
 
   constructor(private route: ActivatedRoute,
@@ -29,10 +33,8 @@ export class MessangerComponent implements OnInit {
   ngOnInit() {
     if ( this.router.url.match('emailer') ) {
       this.messangerTitle = 'Emailer';
-      // this.links = this.emailerLinks;
     } else {
       this.messangerTitle = 'Telegrammer';
-      // this.links = this.telegrammerLinks;
     }
   }
 

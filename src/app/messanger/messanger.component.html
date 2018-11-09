@@ -13,17 +13,12 @@
   <mat-sidenav-container
     class="emailer-sidenav-container"
     [style.marginTop.px]="0">
-    <mat-sidenav
-      class="emailer-sidenav"
-      [opened]='true'
-      #snav
-      [mode]="'side'"
-      fixedTopGap="56">
+    <mat-sidenav class="emailer-sidenav" [opened]='true' #snav [mode]="'side'" fixedTopGap="56">
+      <button class="mt-3 create-message" mat-raised-button color="primary">Create</button>
       <mat-nav-list>
         <a
           class="nav-link"
           mat-list-item [routerLink]="link.url"
-          routerLinkActive="router-link-active" 
           *ngFor="let link of links">
           {{ link.name }}
         </a>

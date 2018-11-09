@@ -1,7 +1,7 @@
 <mat-nav-list>
   <mat-list-item
     [routerLink]="message._id"
-    *ngFor="let message of messages | filterMsg: msgType; let i = index">
+    *ngFor="let message of messages | filterMsg: msgType">
     <mat-icon matListIcon>message</mat-icon>
     <h3 matLine> {{ message.receiver }} </h3>
     <p matLine>
