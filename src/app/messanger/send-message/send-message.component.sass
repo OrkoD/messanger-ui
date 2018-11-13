@@ -1,0 +1,52 @@
+.send-message
+  z-index: 10
+  background: rgba(0, 0, 0, .3)
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  & .send-message-container
+    position: absolute
+    bottom: 0
+    right: 20px
+    background: #fff
+    z-index: 99
+    width: 600px
+    // height: 550px
+    border-radius: 8px 8px 0 0
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2), 0 3px 1px -2px rgba(0,0,0,0.16), 0 1px 5px 0 rgba(0,0,0,0.3)
+    box-sizing: border-box
+
+    & .send-message-header
+      background: #3f4b92
+      padding: 10px 16px
+      border-radius: 8px 8px 0 0
+      color: #fff
+      & p
+        font-weight: 300
+      & i
+        color: rgba(255, 255, 255, .7)
+        cursor: pointer
+        transition: all .2s
+        &:hover
+          color: #fff
+
+    & .send-message-main
+      padding: 10px 16px 0 16px
+      & .message-form
+        position: relative
+        width: 100%
+        top: -5px
+        & .message-subject
+          position: relative
+          top: -15px
+        & .message-text
+          position: relative
+          top: -30px
+
+    & .message-form-footer
+      padding: 0 16px 15px 16px
+      margin-top: -30px
+      & .send-message-btn
+        width: 80px

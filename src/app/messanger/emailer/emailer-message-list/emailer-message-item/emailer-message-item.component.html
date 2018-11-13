@@ -9,7 +9,7 @@
     <button (click)="onStarred()" mat-icon-button>
       <mat-icon>{{ getStarShape() }}</mat-icon>
     </button>
-    <span class="text-muted ml-auto">{{ message.receiver }}</span>
+    <span class="text-muted ml-auto">{{ message.recipient ? message.recipient : message.sender }}</span>
   </div>
   <div class="card-body mb-3 mt-3">
     <h5 class="card-title">{{ message.title }}</h5>

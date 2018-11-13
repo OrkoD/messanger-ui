@@ -11,10 +11,14 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { SendMessageComponent } from './send-message/send-message.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-    MessangerComponent
+    MessangerComponent,
+    SendMessageComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +31,9 @@ import { MatListModule } from '@angular/material/list';
     MatCheckboxModule,
     MatSidenavModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,
+    MatDialogModule
   ]
 })
 export class MessangerModule {}

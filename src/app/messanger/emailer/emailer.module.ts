@@ -10,6 +10,7 @@ import { EmailerMessageListComponent } from './emailer-message-list/emailer-mess
 import { EmailerMessageItemComponent } from './emailer-message-list/emailer-message-item/emailer-message-item.component';
 import { FilterMsgPipe } from 'src/app/pipes/filter-msg.pipe';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { ModalWindowComponent } from './modal-window/modal-window.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TimeAgoPipe } from 'time-ago-pipe';
     EmailerMessageListComponent,
     EmailerMessageItemComponent,
     FilterMsgPipe,
-    TimeAgoPipe
+    TimeAgoPipe,
+    ModalWindowComponent
   ],
   imports: [
     RouterModule,
@@ -26,6 +28,9 @@ import { TimeAgoPipe } from 'time-ago-pipe';
     MatIconModule,
     MatButtonModule
   ],
-  exports: []
+  exports: [],
+  entryComponents: [
+    ModalWindowComponent
+  ]
 })
 export class EmailerModule { }

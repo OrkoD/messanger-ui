@@ -3,7 +3,7 @@
     [routerLink]="message._id"
     *ngFor="let message of messages | filterMsg: msgType">
     <mat-icon matListIcon>message</mat-icon>
-    <h3 matLine> {{ message.receiver }} </h3>
+    <h3 matLine> {{ message.recipient ? message.recipient : message.sender }} </h3>
     <p matLine>
       <span> {{ message.title }} </span>
       <span class="demo-2"> -- {{ message.text }} </span>

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./emailer.component.sass']
 })
 export class EmailerComponent {
-  emailerLinks = ['Inbox', 'Starred', 'Outbox'];
+  emailerLinks = ['Inbox', 'Starred', 'Outbox', 'Sent'];
 }

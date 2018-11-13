@@ -16,9 +16,22 @@ export class EmailerMessageListComponent implements OnInit {
               private dataService: DataService) {}
 
   ngOnInit() {
-    this.route.params.subscribe(p => this.msgType = p.msgType);
-    this.dataService.getMessages()
-      .subscribe(( messages: Message[] ) => this.messages = messages);
+    this.route.params.subscribe(p => {
+      this.msgType = p.msgType;
+      this.dataService.getMessages()
+        .subscribe(( messages: Message[] ) => this.messages = messages);
+    })
+    // this.route.params.subscribe(p => {
+    //   if ( p.msgType === 'sent' ) {
+    //     this.msgType = '';
+    //     this.dataService.getSentMessages()
+    //       .subscribe(( messages: Message[] ) => this.messages = messages);
+    //   } else {
+    //     this.msgType = p.msgType
+    //     this.dataService.getMessages()
+    //       .subscribe(( messages: Message[] ) => this.messages = messages);
+    //   }
+    // });
   }
 
   onDeleteMsg( id: string, $event ) {

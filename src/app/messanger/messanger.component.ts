@@ -24,6 +24,10 @@ export class MessangerComponent implements OnInit {
     {
       name: 'Starred',
       url: 'emailer/starred'
+    },
+    {
+      name: 'Sent',
+      url: 'emailer/sent'
     }
   ]
 

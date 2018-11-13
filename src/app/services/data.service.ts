@@ -11,6 +11,10 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+  addMessage( message: Message ) {
+    return this.http.post(`${this.baseUrl}/messages`, message);
+  }
+
   getMessages() {
     return this.http.get(`${this.baseUrl}/messages`);
   }
@@ -25,6 +29,26 @@ export class DataService {
 
   updateMessage( id: string, updateData: any ) {
     return this.http.put(`${this.baseUrl}/messages/${id}`, updateData);
+  }
+  
+  addSentMessage( message: Message ) {
+    return this.http.post(`${this.baseUrl}/sent-messages`, message);
+  }
+
+  getSentMessages() {
+    return this.http.get(`${this.baseUrl}/sent-messages`);
+  }
+
+  getSentMessage( id: string ) {
+    return this.http.get(`${this.baseUrl}/sent-messages/${id}`);
+  }
+
+  deleteSentMessage( id: string ) {
+    return this.http.delete(`${this.baseUrl}/sent-messages/${id}`);
+  }
+
+  updateSentMessage( id: string, updateData: any ) {
+    return this.http.put(`${this.baseUrl}/sent-messages/${id}`, updateData);
   }
   
 }
