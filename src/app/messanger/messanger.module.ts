@@ -4,7 +4,7 @@ import { MessangerComponent } from './messanger.component';
 import { EmailerModule } from './emailer/emailer.module';
 import { TelegrammerModule } from './telegrammer/telegrammer.module';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -14,6 +14,8 @@ import { MatListModule } from '@angular/material/list';
 import { SendMessageComponent } from './send-message/send-message.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,17 @@ import { MatDialogModule } from '@angular/material/dialog';
     EmailerModule,
     TelegrammerModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatToolbarModule,
     MatCheckboxModule,
     MatSidenavModule,
     MatButtonModule,
     MatListModule,
+    MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatAutocompleteModule
   ]
 })
 export class MessangerModule {}

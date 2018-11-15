@@ -8,9 +8,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { EmailerComponent } from './emailer.component';
 import { EmailerMessageListComponent } from './emailer-message-list/emailer-message-list.component';
 import { EmailerMessageItemComponent } from './emailer-message-list/emailer-message-item/emailer-message-item.component';
+import { ModalWindowComponent } from './modal-window/modal-window.component';
+
 import { FilterMsgPipe } from 'src/app/pipes/filter-msg.pipe';
 import { TimeAgoPipe } from 'time-ago-pipe';
-import { ModalWindowComponent } from './modal-window/modal-window.component';
 
 @NgModule({
   declarations: [
@@ -33,4 +34,4 @@ import { ModalWindowComponent } from './modal-window/modal-window.component';
     ModalWindowComponent
   ]
 })
-export class EmailerModule { }
+export class EmailerModule {}

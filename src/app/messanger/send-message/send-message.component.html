@@ -8,17 +8,24 @@
 
     <div class="send-message-main">
       <form
+        [formGroup]="messageForm"
         #form="ngForm"
         (ngSubmit)="onSendMessage(form.value)"
         class="message-form">
         <mat-form-field class="w-100">
-          <input name="recipient" ngModel matInput placeholder="Recipient">
+          <input type="text" placeholder="Recipient" aria-label="Number" matInput formControlName="recipient" [matAutocomplete]="auto">
+          <mat-autocomplete showPanel="false" autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+
         </mat-form-field>
         <mat-form-field class="message-subject w-100">
-          <input name="title" ngModel matInput placeholder="Subject">
+          <input name="title" formControlName='title' matInput placeholder="Subject">
         </mat-form-field>
         <mat-form-field class="message-text w-100">
-          <textarea name="text" ngModel rows="15" matInput></textarea>
+          <textarea name="text" formControlName='text' rows="15" matInput></textarea>
         </mat-form-field>
 
         <div class="message-form-footer d-flex justify-content-between align-items-center">

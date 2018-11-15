@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Message } from '../interfaces/message';
+import { Contact } from '../interfaces/contact';
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +50,14 @@ export class DataService {
 
   updateSentMessage( id: string, updateData: any ) {
     return this.http.put(`${this.baseUrl}/sent-messages/${id}`, updateData);
+  }
+
+  addContact( contact: Contact ) {
+    return this.http.post(`${this.baseUrl}/contacts`, contact);
+  }
+
+  getContacts() {
+    return this.http.get(`${this.baseUrl}/contacts`);
   }
   
 }

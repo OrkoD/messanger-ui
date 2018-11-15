@@ -18,7 +18,4 @@ export class ModalWindowComponent implements OnInit {
     this.dialogRef.close( save );
   }
 
-  // onOk() {
-  //   this.dialogRef.close();
-  // }
 }
