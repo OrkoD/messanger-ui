@@ -1,0 +1,14 @@
+<button
+  (click)="onOpenWindow()"
+  class="mt-3 create-message"
+  mat-raised-button color="primary">
+  Create
+</button>
+<mat-nav-list>
+  <a
+    class="nav-link"
+    mat-list-item [routerLink]="link.url"
+    *ngFor="let link of links">
+    {{ link.name }}
+  </a>
+</mat-nav-list>

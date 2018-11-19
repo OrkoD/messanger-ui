@@ -1,0 +1,17 @@
+<div class="chat-header d-flex flex-column justify-content-center align-items-center">
+  <p>{{ channel?.participant.fullName }}</p>
+  <span class="text-muted">Active 1 hour ago</span>
+</div>
+
+<div class="chat-content">
+  <div
+    class="chat-message-container"
+    *ngFor="let message of messages">
+    <div
+      matTooltip="{{ message.createdAt | date: 'medium' }}"
+      [ngClass]="{'my-msg': message.recipient}"
+      class="chat-message">
+      {{ message.text }}
+    </div>
+  </div>
+</div>

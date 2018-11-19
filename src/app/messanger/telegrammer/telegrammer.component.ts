@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-telegrammer',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TelegrammerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    // this.dataService.
   }
 
 }

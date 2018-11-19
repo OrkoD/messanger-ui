@@ -1,20 +1,24 @@
-<div class="emailer-container">
+<div class="messanger-container">
 
-  <mat-toolbar color="primary" class="emailer-toolbar">
+  <mat-toolbar color="primary" class="messanger-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="emailer-title">{{ messangerTitle }}</h1>
+    <h1 class="messanger-title">{{ messangerTitle }}</h1>
     <button [routerLink]="['/']" class="home-btn" mat-icon-button>
       <mat-icon>home</mat-icon>
     </button>
   </mat-toolbar>
 
   <mat-sidenav-container
-    class="emailer-sidenav-container"
+    class="messanger-sidenav-container"
     [style.marginTop.px]="0">
-    <mat-sidenav class="emailer-sidenav" [opened]='true' #snav [mode]="'side'" fixedTopGap="56">
-      <button
+    <mat-sidenav [ngClass]="{'sidenav-widther': messangerTitle === 'Telegrammer'}" class="messanger-sidenav" [opened]='true' #snav [mode]="'side'" fixedTopGap="56">
+
+
+      <app-emailer-sidenav (openWindow)="sendMessage.openWindow()" *ngIf="messangerTitle === 'Emailer'"></app-emailer-sidenav>
+      <app-telegrammer-sidenav *ngIf="messangerTitle === 'Telegrammer'"></app-telegrammer-sidenav>
+      <!-- <button
         (click)="sendMessage.openWindow()"
         class="mt-3 create-message"
         mat-raised-button color="primary">
@@ -27,7 +31,9 @@
           *ngFor="let link of links">
           {{ link.name }}
         </a>
-      </mat-nav-list>
+      </mat-nav-list> -->
+
+
     </mat-sidenav>
 
     <mat-sidenav-content>

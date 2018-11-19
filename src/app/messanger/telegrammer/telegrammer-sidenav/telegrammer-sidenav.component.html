@@ -1,0 +1,21 @@
+<div class="search-channel mt-3 pl-2 pr-2">
+  <div class="input-group mb-3 d-flex align-items-center">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><i class="material-icons">search</i></span>
+    </div>
+    <input [(ngModel)]="search" class="form-control" type="text" placeholder="Search">
+    <i *ngIf="search" (click)="onClearInput()" class="clear-input material-icons text-muted">clear</i>
+  </div>
+</div>
+
+<div class="list-channels list-group">
+  <a
+    routerLink="telegrammer/{{channel._id}}" routerLinkActive="active" 
+    *ngFor="let channel of channels | filterChannels: search"
+    class="tel-sidenav-link list-group-item list-group-item-action d-flex flex-row align-items-center">
+    <img class="avatar-img mr-3" [src]="channel.participant.gender === 'male' ? manIcon : channel.participant.gender === 'female' ? womanIcon : defaultIcon">
+    <div class="d-flex w-100 justify-content-between">
+      <h6 class="mb-1">{{ channel.participant.fullName }}</h6>
+    </div>
+  </a>
+</div>

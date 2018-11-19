@@ -53,11 +53,23 @@ export class DataService {
   }
 
   addContact( contact: Contact ) {
-    return this.http.post(`${this.baseUrl}/contacts`, contact);
+    return this.http.post(`${this.baseUrl}/contact`, contact);
   }
 
   getContacts() {
-    return this.http.get(`${this.baseUrl}/contacts`);
+    return this.http.get(`${this.baseUrl}/contact`);
+  }
+
+  getConversations() {
+    return this.http.get(`${this.baseUrl}/conversation`);
+  }
+
+  getConversation( id: string ) {
+    return this.http.get(`${this.baseUrl}/conversation/${id}`);
+  }
+
+  getConversationMessages( id: string ) {
+    return this.http.get(`${this.baseUrl}/messages/conversation/${id}`);
   }
   
 }

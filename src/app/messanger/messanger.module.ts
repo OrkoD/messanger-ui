@@ -16,11 +16,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material';
+import { EmailerSidenavComponent } from './emailer/emailer-sidenav/emailer-sidenav.component';
+import { TelegrammerSidenavComponent } from './telegrammer/telegrammer-sidenav/telegrammer-sidenav.component';
+import { FilterChannelsPipe } from '../pipes/filter-channels.pipe';
 
 @NgModule({
   declarations: [
     MessangerComponent,
-    SendMessageComponent
+    SendMessageComponent,
+    EmailerSidenavComponent,
+    TelegrammerSidenavComponent,
+    FilterChannelsPipe
   ],
   imports: [
     CommonModule,

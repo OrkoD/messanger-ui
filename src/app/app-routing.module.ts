@@ -6,6 +6,8 @@ import { TelegrammerComponent } from './messanger/telegrammer/telegrammer.compon
 import { MessangerComponent } from './messanger/messanger.component';
 import { EmailerMessageListComponent } from './messanger/emailer/emailer-message-list/emailer-message-list.component';
 import { EmailerMessageItemComponent } from './messanger/emailer/emailer-message-list/emailer-message-item/emailer-message-item.component';
+import { TelegrammerSelectChatComponent } from './messanger/telegrammer/telegrammer-select-chat/telegrammer-select-chat.component';
+import { TelegrammerChatComponent } from './messanger/telegrammer/telegrammer-chat/telegrammer-chat.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -17,7 +19,10 @@ const routes: Routes = [
         { path: ':msgType', component: EmailerMessageListComponent },
         { path: ':msgType/:id', component: EmailerMessageItemComponent }
       ]},
-      { path: 'telegrammer', component: TelegrammerComponent }
+      { path: 'telegrammer', component: TelegrammerComponent, children: [
+        { path: '', component: TelegrammerSelectChatComponent, pathMatch: 'full' },
+        { path: ':id', component: TelegrammerChatComponent }
+      ]}
     ]
   },
 ];

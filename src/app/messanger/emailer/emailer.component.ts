@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './emailer.component.html',
   styleUrls: ['./emailer.component.sass']
 })
-export class EmailerComponent {
-  emailerLinks = ['Inbox', 'Starred', 'Outbox', 'Sent'];
-}
+export class EmailerComponent {}
